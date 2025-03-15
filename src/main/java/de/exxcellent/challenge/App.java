@@ -1,7 +1,10 @@
 package de.exxcellent.challenge;
 
+import de.exxcellent.challenge.analysers.TableAnalyser;
 import de.exxcellent.challenge.readers.TableFromCSVReader;
 import de.exxcellent.challenge.readers.TableFromFileReader;
+
+import java.io.FileNotFoundException;
 
 /**
  * The entry class for the weather-data programming-challenge. Weather data or football results are read from csv-files
@@ -21,8 +24,9 @@ public final class App {
      *             "weather.csv", "football.csv", or other filenames as second entry,
      *             filepaths as third entry.
      *             If no arguments are passed, the default is the analysis of weather data.
+     * @throws FileNotFoundException in case the file is not found.
      */
-    public static void main(String... args) {
+    public static void main(String... args) throws FileNotFoundException {
 
         // The default mode of the application is to analyse weather data of the file
         // src/main/resources/de/exxcellent/challenge/weather.csv, but other modes, data types, or filepaths can be
@@ -42,6 +46,10 @@ public final class App {
                 // Since other file formats are not supported yet, an exception is thrown, in case one tries.
                 throw new UnsupportedOperationException("File extension is not supported. Please try .csv-files.");
         }
+
+        TableAnalyser tableAnalyser = new TableAnalyser(
+                reader.readColumnNames(filePath + fileName),
+                reader.readCellEntries(filePath + fileName));
 
         // Switch to decide if weather or football data should be analysed:
         switch (mode) {

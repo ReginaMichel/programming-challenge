@@ -50,17 +50,21 @@ class AppTest {
 
     /**
      * Tests, if default-mode of the main-method is run.
+     *
+     * @throws FileNotFoundException in case the file is not found.
      */
     @Test
-    void runDefault() {
+    void runDefault() throws FileNotFoundException {
         App.main();
     }
 
     /**
      * Tests, if football-mode of the main-method is run.
+     *
+     * @throws FileNotFoundException in case the file is not found.
      */
     @Test
-    void runFootball() {
+    void runFootball() throws FileNotFoundException {
         App.main("--football", "football.csv");
     }
 

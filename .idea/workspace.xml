@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Implemented method to read rows in TableFromCSVReader.java and added a test to check its functionality.">
+    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/readers/TableFromCSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/readers/TableFromCSVReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,7 +63,20 @@
       <recent name="C:\Users\Regin\IntelliJProjects\programming-challenge\src\test\resources\de\exxcellent\challenge" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.testReadCellEntries">
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.App" />
+      <module name="challenge" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.exxcellent.challenge.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
@@ -73,22 +88,6 @@
       <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AppTest.runDefault" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="challenge" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.exxcellent.challenge.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
-      <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
-      <option name="METHOD_NAME" value="runDefault" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -143,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.App" />
         <item itemvalue="JUnit.AppTest.testReadCellEntries" />
         <item itemvalue="JUnit.AppTest.testReadLines" />
         <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.runFootball" />
-        <item itemvalue="JUnit.AppTest.runDefault" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +191,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742068393952</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality.">
+      <option name="closed" value="true" />
+      <created>1742069573279</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1742069573279</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -200,6 +207,7 @@
     <MESSAGE value="Added handling of CLI arguments to main method. Added a switch to switch between weather- or football-mode. Added switch to choose the correct file reader for specific file-formats passed to the main method.&#10;Added tests for these functionalities to AppTest.java. Added a resources-folder to the test-folder, which contains files for testcases." />
     <MESSAGE value="Implemented method to read column names in TableFromCSVReader.java and added tests to test its functionality." />
     <MESSAGE value="Implemented method to read rows in TableFromCSVReader.java and added a test to check its functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented method to read rows in TableFromCSVReader.java and added a test to check its functionality." />
+    <MESSAGE value="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality." />
   </component>
 </project>
