@@ -79,6 +79,24 @@ public class TableFromCSVReader implements TableFromFileReader{
      * @throws FileNotFoundException in case the file is not found.
      */
     public String[][] readCellEntries(String filepath) throws FileNotFoundException {
-        return new String[0][];
+        // readColumnNames(filepath) is called to obtain the number of columns expected for each row in the table.
+        int columnNumber = readColumnNames(filepath).size();
+        // readEntryLines(filepath) is called to obtain the content of the data table except the header.
+        ArrayList<String> lines = readEntryLines(filepath);
+        String[][] entries = new String[lines.size()][columnNumber];
+        // For each row, a Scanner is created, which separates the entries via commas, that are expected in .csv-files.
+        for(int i = 0; i < lines.size(); i++) {
+            Scanner inputLine = new Scanner(lines.get(i));
+            inputLine.useDelimiter(",");
+            int j = 0;
+            // The additional condition "hasNext()" is important, because it might be that there are entries missing in
+            // some of the lines.
+            while(inputLine.hasNext() && j < columnNumber){
+                entries[i][j] = inputLine.next();
+                j++;
+            }
+        }
+        // The content is returned as a two-dimensional String-Array.
+        return entries;
     }
 }

@@ -1,7 +1,7 @@
 package de.exxcellent.challenge;
 
 import de.exxcellent.challenge.readers.TableFromCSVReader;
-import org.junit.jupiter.api.BeforeEach;
+//import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
@@ -16,12 +16,12 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 class AppTest {
 
-    private String successLabel = "not successful";
+ /*   private String successLabel = "not successful";
 
     @BeforeEach
     void setUp() {
         successLabel = "successful";
-    }
+    } */
 
     /**
      * Tests, what happens if one passes file extentions to the main method, which are not supported yet. An
@@ -108,5 +108,16 @@ class AppTest {
     void testReadLines() throws FileNotFoundException {
         String testLine = "Ipswich,38,9,9,20,41,64,36";
         assertEquals(testLine, new TableFromCSVReader().readEntryLines("src/main/resources/de/exxcellent/challenge/football.csv").get(17));
+    }
+
+    /**
+     * Tests, if {@link TableFromCSVReader} reads entries of data tables in .csv files properly.
+     *
+     * @throws FileNotFoundException in case the file is not found.
+     */
+    @Test
+    void testReadCellEntries() throws FileNotFoundException {
+        String testCell = "1012.7";
+        assertEquals(testCell, new TableFromCSVReader().readCellEntries("src/main/resources/de/exxcellent/challenge/weather.csv")[5][13]);
     }
 }
