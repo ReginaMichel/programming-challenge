@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Added handling of CLI arguments to main method. Added a switch to switch between weather- or football-mode. Added switch to choose the correct file reader for specific file-formats passed to the main method.&#10;Added tests for these functionalities to AppTest.java. Added a resources-folder to the test-folder, which contains files for testcases.">
+    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Implemented method to read column names in TableFromCSVReader.java and added tests to test its functionality.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/readers/TableFromCSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/readers/TableFromCSVReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
       <recent name="C:\Users\Regin\IntelliJProjects\programming-challenge\src\test\resources\de\exxcellent\challenge" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest">
+  <component name="RunManager" selected="JUnit.AppTest.testReadLines">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
@@ -109,7 +108,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.unsupportedFileFormats" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.testReadLines" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +118,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
-      <option name="METHOD_NAME" value="unsupportedFileFormats" />
+      <option name="METHOD_NAME" value="testReadLines" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -143,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.testReadLines" />
         <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.runFootball" />
         <item itemvalue="JUnit.AppTest.runDefault" />
         <item itemvalue="JUnit.AppTest.unsupportedModes" />
-        <item itemvalue="JUnit.AppTest.unsupportedFileFormats" />
       </list>
     </recent_temporary>
   </component>
@@ -176,12 +175,21 @@
       <option name="project" value="LOCAL" />
       <updated>1742065859588</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Implemented method to read column names in TableFromCSVReader.java and added tests to test its functionality.">
+      <option name="closed" value="true" />
+      <created>1742067749816</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742067749816</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Basic setup of the weather-data programming-challenge. A new package is created, which contains an Interface for reading data tables from files with different types, and a class to read data tables from .csv files. The methods are not yet implemented." />
     <MESSAGE value="Added handling of CLI arguments to main method. Added a switch to switch between weather- or football-mode. Added switch to choose the correct file reader for specific file-formats passed to the main method.&#10;Added tests for these functionalities to AppTest.java. Added a resources-folder to the test-folder, which contains files for testcases." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added handling of CLI arguments to main method. Added a switch to switch between weather- or football-mode. Added switch to choose the correct file reader for specific file-formats passed to the main method.&#10;Added tests for these functionalities to AppTest.java. Added a resources-folder to the test-folder, which contains files for testcases." />
+    <MESSAGE value="Implemented method to read column names in TableFromCSVReader.java and added tests to test its functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented method to read column names in TableFromCSVReader.java and added tests to test its functionality." />
   </component>
 </project>

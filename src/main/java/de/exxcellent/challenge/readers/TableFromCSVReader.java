@@ -50,7 +50,25 @@ public class TableFromCSVReader implements TableFromFileReader{
      * @throws FileNotFoundException in case the file is not found.
      */
     public ArrayList<String> readEntryLines(String filepath) throws FileNotFoundException {
-        return null;
+        // The lines are stored as ArrayList, to be flexible regarding the total amount of lines in a file.
+        ArrayList<String> lines = new ArrayList<String>();
+        File file = new File(filepath);
+        if (!file.exists()) {
+            throw new FileNotFoundException("There is no file with this path.");
+        }
+        // A scanner reads the whole file and adds every line to the list.
+        try (Scanner wholeInput = new Scanner(file)) {
+            // Skip first line, because it stores the column titles.
+            wholeInput.nextLine();
+            while(wholeInput.hasNextLine()){
+                lines.add(wholeInput.nextLine());
+            }
+        // In case there is no data or the file cannot be read properly, an exception is thrown and passed on.
+        } catch (NoSuchElementException e) {
+            throw new NoSuchElementException("File is completely empty or has wrong format.");
+        }
+        // Returns a list of all lines except the column headers.
+        return lines;
     }
 
     /**

@@ -98,4 +98,15 @@ class AppTest {
         columnNames.add("R AvSLP");
         assertEquals(columnNames, new TableFromCSVReader().readColumnNames("src/main/resources/de/exxcellent/challenge/weather.csv"));
     }
+
+    /**
+     * Tests, if {@link TableFromCSVReader} reads rows of .csv files properly.
+     *
+     * @throws FileNotFoundException in case the file is not found.
+     */
+    @Test
+    void testReadLines() throws FileNotFoundException {
+        String testLine = "Ipswich,38,9,9,20,41,64,36";
+        assertEquals(testLine, new TableFromCSVReader().readEntryLines("src/main/resources/de/exxcellent/challenge/football.csv").get(17));
+    }
 }
