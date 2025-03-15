@@ -54,11 +54,13 @@ public final class App {
         // Switch to decide if weather or football data should be analysed:
         switch (mode) {
             case "--weather":
-                String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
+                String dayWithSmallestTempSpread
+                        = tableAnalyser.findMinimalSpreadViaColumnName("Day","MnT", "MxT");
                 System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
                 break;
             case "--football":
-                String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
+                String teamWithSmallestGoalSpread
+                        = tableAnalyser.findMinimalSpreadViaColumnName("Team", "Goals Allowed", "Goals");
                 System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
                 break;
             default:

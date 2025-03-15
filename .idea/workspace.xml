@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/package-info.java" afterDir="false" />
+    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +61,7 @@
       <recent name="C:\Users\Regin\IntelliJProjects\programming-challenge\src\test\resources\de\exxcellent\challenge" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
+  <component name="RunManager" selected="JUnit.AppTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.App" />
       <module name="challenge" />
@@ -142,10 +140,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="Application.App" />
         <item itemvalue="JUnit.AppTest.testReadCellEntries" />
         <item itemvalue="JUnit.AppTest.testReadLines" />
-        <item itemvalue="JUnit.AppTest" />
         <item itemvalue="JUnit.AppTest.runFootball" />
       </list>
     </recent_temporary>
@@ -199,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742069573279</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method.">
+      <option name="closed" value="true" />
+      <created>1742072024103</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742072024103</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -208,6 +214,7 @@
     <MESSAGE value="Implemented method to read column names in TableFromCSVReader.java and added tests to test its functionality." />
     <MESSAGE value="Implemented method to read rows in TableFromCSVReader.java and added a test to check its functionality." />
     <MESSAGE value="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality." />
+    <MESSAGE value="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method." />
   </component>
 </project>
