@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method.">
+    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Added methods to determine rows with minimal spread of the values of two columns to TableAnalyser.java. The first method takes the column names, the other one takes the column numbers as parameters. Added the method call to the main method in App.java.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +33,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2uMRsDehH80a4RgCGqpGJsRJJou" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -45,23 +44,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "OverrideImplement.generate.javadoc": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "challenge-weatherdata",
-    "last_opened_file_path": "C:/Users/Regin/IntelliJProjects/programming-challenge/src/test/resources/de/exxcellent/challenge",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;OverrideImplement.generate.javadoc&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;challenge-weatherdata&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Regin/IntelliJProjects/programming-challenge/src/test/resources/de/exxcellent/challenge&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Regin\IntelliJProjects\programming-challenge\src\test\resources\de\exxcellent\challenge" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest">
+  <component name="RunManager" selected="JUnit.AppTest.testFileWithoutHeader">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.App" />
       <module name="challenge" />
@@ -90,7 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.runFootball" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.testColumnNameMisspelled" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
         <pattern>
@@ -100,13 +99,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
-      <option name="METHOD_NAME" value="runFootball" />
+      <option name="METHOD_NAME" value="testColumnNameMisspelled" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.testReadCellEntries" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.testFileWithoutHeader" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
         <pattern>
@@ -116,13 +115,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
-      <option name="METHOD_NAME" value="testReadCellEntries" />
+      <option name="METHOD_NAME" value="testFileWithoutHeader" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.testReadLines" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.testMoreThanOneWithMinimalSpread" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
         <pattern>
@@ -132,7 +131,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
-      <option name="METHOD_NAME" value="testReadLines" />
+      <option name="METHOD_NAME" value="testMoreThanOneWithMinimalSpread" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -140,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AppTest.testFileWithoutHeader" />
+        <item itemvalue="JUnit.AppTest.testColumnNameMisspelled" />
+        <item itemvalue="JUnit.AppTest.testMoreThanOneWithMinimalSpread" />
         <item itemvalue="JUnit.AppTest" />
         <item itemvalue="Application.App" />
-        <item itemvalue="JUnit.AppTest.testReadCellEntries" />
-        <item itemvalue="JUnit.AppTest.testReadLines" />
-        <item itemvalue="JUnit.AppTest.runFootball" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +204,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742072024103</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added methods to determine rows with minimal spread of the values of two columns to TableAnalyser.java. The first method takes the column names, the other one takes the column numbers as parameters. Added the method call to the main method in App.java.">
+      <option name="closed" value="true" />
+      <created>1742074878013</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742074878013</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -215,6 +222,7 @@
     <MESSAGE value="Implemented method to read rows in TableFromCSVReader.java and added a test to check its functionality." />
     <MESSAGE value="Implemented method to read single entries in TableFromCSVReader.java and added a test to check its functionality." />
     <MESSAGE value="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created new package de.exxcellent.challenge.analysers, which contains tools for analysing data tables. Created new class TableAnalyser.java, which stores entries and column names of data tables. Added an object of this class to main method of App.java. Added FileNotFoundException to main method." />
+    <MESSAGE value="Added methods to determine rows with minimal spread of the values of two columns to TableAnalyser.java. The first method takes the column names, the other one takes the column numbers as parameters. Added the method call to the main method in App.java." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods to determine rows with minimal spread of the values of two columns to TableAnalyser.java. The first method takes the column names, the other one takes the column numbers as parameters. Added the method call to the main method in App.java." />
   </component>
 </project>

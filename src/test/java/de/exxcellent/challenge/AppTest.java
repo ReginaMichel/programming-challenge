@@ -1,11 +1,12 @@
 package de.exxcellent.challenge;
 
+import de.exxcellent.challenge.analysers.TableAnalyser;
 import de.exxcellent.challenge.readers.TableFromCSVReader;
-//import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -15,13 +16,6 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
  */
 class AppTest {
-
- /*   private String successLabel = "not successful";
-
-    @BeforeEach
-    void setUp() {
-        successLabel = "successful";
-    } */
 
     /**
      * Tests, what happens if one passes file extentions to the main method, which are not supported yet. An
@@ -123,5 +117,44 @@ class AppTest {
     void testReadCellEntries() throws FileNotFoundException {
         String testCell = "1012.7";
         assertEquals(testCell, new TableFromCSVReader().readCellEntries("src/main/resources/de/exxcellent/challenge/weather.csv")[5][13]);
+    }
+
+    /**
+     * Tests the case, that there is more than one row entry, which has the smallest spread regarding the values of two
+     * columns. The method findMinimalSpreadViaColumnNames should return the names or IDs of all rows, which satisfy the
+     * condition of smallest spread. They should be ordered by ascending row numbers.
+     *
+     * @throws FileNotFoundException in case the file is not found.
+     */
+    @Test
+    void testMoreThanOneWithMinimalSpread() throws FileNotFoundException {
+        String teamsWithMinimalSpread = "Sunderland, Ipswich";
+        TableFromCSVReader csvReader = new TableFromCSVReader();
+        TableAnalyser tableAnalyser = new TableAnalyser(
+                csvReader.readColumnNames("src/main/resources/de/exxcellent/challenge/football.csv"),
+                csvReader.readCellEntries("src/main/resources/de/exxcellent/challenge/football.csv"));
+        assertEquals(teamsWithMinimalSpread, tableAnalyser.findMinimalSpreadViaColumnName("Team","Wins","Losses"));
+    }
+
+    /**
+     * Tests the case, if there is a column name misspelled. There should be a {@link NoSuchElementException} stating
+     * the name of the column, that is missing or misspelled.
+     */
+    @Test
+    void testColumnNameMisspelled() {
+        Exception exception = assertThrows(NoSuchElementException.class,
+                () -> App.main("--football", "football_misspelled.csv", "src/test/resources/de/exxcellent/challenge/"));
+        assertEquals("File contains no column with name Team.", exception.getMessage());
+    }
+
+    /**
+     * Tests the case, if there is a file without column names. There should be a {@link NoSuchElementException} stating
+     * the name of the column, that is missing or misspelled.
+     */
+    @Test
+    void testFileWithoutHeader() {
+        Exception exception = assertThrows(NoSuchElementException.class,
+                () -> App.main("--weather", "weather_withoutheader.csv", "src/test/resources/de/exxcellent/challenge/"));
+        assertEquals("File contains no column with name Day.", exception.getMessage());
     }
 }
