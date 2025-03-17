@@ -157,4 +157,49 @@ class AppTest {
                 () -> App.main("--weather", "weather_withoutheader.csv", "src/test/resources/de/exxcellent/challenge/"));
         assertEquals("File contains no column with name Day.", exception.getMessage());
     }
+
+    /**
+     * Tests the case, if there is a .csv-file that contains column names, but no data entries. It should be possible to
+     * create an object of {@link TableAnalyser} of this file, but analysing the data set should result in a
+     * {@link NoSuchElementException} exception with message "Data table contains no entries.".
+     */
+    @Test
+    void testNoEntries() {
+        Exception exception = assertThrows(NoSuchElementException.class,
+                () -> App.main("--weather", "weather_noentries.csv", "src/test/resources/de/exxcellent/challenge/"));
+        assertEquals("Data table contains no entries.", exception.getMessage());
+    }
+
+    /**
+     * Tests the case, if there are some entries missing in the data set, that are not relevant for the analysis of the
+     * smallest temperature spread or the smallest spread of football goals. The analysis should run as usual.
+     *
+     * @throws FileNotFoundException in case the file is not found.
+     */
+    @Test
+    void testSomeEntriesMissing() throws FileNotFoundException {
+        App.main("--weather", "weather_someentriesmissing.csv", "src/test/resources/de/exxcellent/challenge/");
+    }
+
+    /**
+     * Tests the case, if there are entries missing, which contain data relevant for the analysis. A message should be
+     * written in terminal to inform the user, but beside that the analysis should run on the remaining data.
+     *
+     * @throws FileNotFoundException in case the file is not found.
+     */
+    @Test
+    void testMissingRelevantEntries() throws FileNotFoundException {
+        App.main("--weather", "weather_missingtemperatures.csv", "src/test/resources/de/exxcellent/challenge/");
+    }
+
+    /**
+     * Tests the case, if entries that are relevant for the analysis are in wrong data formats. A message should be
+     * written in terminal to inform the user, but beside that the analysis should run on the remaining data.
+     *
+     * @throws FileNotFoundException in case the file is not found.
+     */
+    @Test
+    void testTextInsteadOfNumbers() throws FileNotFoundException {
+        App.main("--weather", "weather_textinsteadnumbers.csv", "src/test/resources/de/exxcellent/challenge/");
+    }
 }
