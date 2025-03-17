@@ -2,9 +2,13 @@ package de.exxcellent.challenge;
 
 import de.exxcellent.challenge.analysers.TableAnalyser;
 import de.exxcellent.challenge.readers.TableFromCSVReader;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -16,6 +20,27 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
  */
 class AppTest {
+
+    // While testing the terminal output is caught by an output stream captor, to be able to check whether the texts are
+    // as expected.
+    private final PrintStream standardOutput = System.out;
+    private final ByteArrayOutputStream outputCaptor = new ByteArrayOutputStream();
+
+    /**
+     * To check, whether terminal outputs are printed as expected, a new output stream is set up before each unit test.
+     */
+    @BeforeEach
+    public void setUp() {
+        System.setOut(new PrintStream(outputCaptor));
+    }
+
+    /**
+     * After each test, the standard output stream is restored.
+     */
+    @AfterEach
+    public void tearDown() {
+        System.setOut(standardOutput);
+    }
 
     /**
      * Tests, what happens if one passes file extentions to the main method, which are not supported yet. An
@@ -43,23 +68,25 @@ class AppTest {
     }
 
     /**
-     * Tests, if default-mode of the main-method is run.
+     * Tests, if default-mode of the main-method is run and if the output to the terminal is like expected.
      *
      * @throws FileNotFoundException in case the file is not found.
      */
     @Test
     void runDefault() throws FileNotFoundException {
         App.main();
+        assertEquals("Day with smallest temperature spread : 14", outputCaptor.toString().trim());
     }
 
     /**
-     * Tests, if football-mode of the main-method is run.
+     * Tests, if football-mode of the main-method is run and if the output of the terminal is like expected.
      *
      * @throws FileNotFoundException in case the file is not found.
      */
     @Test
     void runFootball() throws FileNotFoundException {
         App.main("--football", "football.csv");
+        assertEquals("Team with smallest goal spread       : Aston_Villa", outputCaptor.toString().trim());
     }
 
     /**
@@ -179,6 +206,7 @@ class AppTest {
     @Test
     void testSomeEntriesMissing() throws FileNotFoundException {
         App.main("--weather", "weather_someentriesmissing.csv", "src/test/resources/de/exxcellent/challenge/");
+        assertEquals("Day with smallest temperature spread : 14", outputCaptor.toString().trim());
     }
 
     /**
@@ -190,10 +218,13 @@ class AppTest {
     @Test
     void testMissingRelevantEntries() throws FileNotFoundException {
         App.main("--weather", "weather_missingtemperatures.csv", "src/test/resources/de/exxcellent/challenge/");
+        assertEquals(
+                "Some lines of the data set are incomplete. Relevant data is missing. Calculated the result based on remaining data.\r\n" +
+                        "Day with smallest temperature spread : 14", outputCaptor.toString().trim());
     }
 
     /**
-     * Tests the case, if entries that are relevant for the analysis are in wrong data formats. A message should be
+     * Tests the case, if entries that are relevant for the analysis contain wrong data formats. A message should be
      * written in terminal to inform the user, but beside that the analysis should run on the remaining data.
      *
      * @throws FileNotFoundException in case the file is not found.
@@ -201,5 +232,20 @@ class AppTest {
     @Test
     void testTextInsteadOfNumbers() throws FileNotFoundException {
         App.main("--weather", "weather_textinsteadnumbers.csv", "src/test/resources/de/exxcellent/challenge/");
+        assertEquals(
+                "Some entries contain wrong data format. Ignored those entries and calculated result based on remaining data.\r\n" +
+                        "Day with smallest temperature spread : 15", outputCaptor.toString().trim());
+    }
+
+    /**
+     * Test for the case, that a file with .csv-extention is not in csv format. The result is the same as for a file
+     * that is empty. An {@link NoSuchElementException} with message "File is completely empty or has wrong format." is
+     * thrown.
+     */
+    @Test
+    void testWrongFileFormat() {
+        Exception exception = assertThrows(NoSuchElementException.class,
+                () -> App.main("--weather", "weather_notcsvfile.csv", "src/test/resources/de/exxcellent/challenge/"));
+        assertEquals("File is completely empty or has wrong format.", exception.getMessage());
     }
 }
