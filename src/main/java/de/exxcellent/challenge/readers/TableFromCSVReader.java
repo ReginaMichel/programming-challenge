@@ -84,6 +84,9 @@ public class TableFromCSVReader implements TableFromFileReader{
         // readEntryLines(filepath) is called to obtain the content of the data table except the header.
         ArrayList<String> lines = readEntryLines(filepath);
         String[][] entries = new String[lines.size()][columnNumber];
+        // In case there are too short or too long lines, the user is notified via console output.
+        boolean dataIncomplete = false;
+        boolean tooManyEntriesPerLine = false;
         // For each row, a Scanner is created, which separates the entries via commas, that are expected in .csv-files.
         for(int i = 0; i < lines.size(); i++) {
             Scanner inputLine = new Scanner(lines.get(i));
@@ -95,6 +98,20 @@ public class TableFromCSVReader implements TableFromFileReader{
                 entries[i][j] = inputLine.next();
                 j++;
             }
+            if (j < columnNumber) {
+                dataIncomplete = true;
+            }
+            if (inputLine.hasNext()) {
+                tooManyEntriesPerLine = true;
+            }
+        }
+        // In case there are lines with missing entries, the user is notified via console output.
+        if (dataIncomplete) {
+            System.out.println("Some lines of the data set are incomplete. Please verify relevant data entries are " +
+                    "in the right place.");
+        }
+        if (tooManyEntriesPerLine) {
+            System.out.println("Some lines have too many entries. Please crosscheck your input file.");
         }
         // The content is returned as a two-dimensional String-Array.
         return entries;

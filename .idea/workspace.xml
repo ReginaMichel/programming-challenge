@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file.">
+    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Added warning message, if rows of the data set have too many or too less entries. Changed test cases accordingly.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/analysers/TableAnalyser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/readers/TableFromCSVReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/exxcellent/challenge/readers/TableFromCSVReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,7 +65,7 @@
       <recent name="C:\Users\Regin\IntelliJProjects\programming-challenge\src\test\resources\de\exxcellent\challenge" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AppTest.testTextInsteadOfNumbers">
+  <component name="RunManager" selected="JUnit.AppTest.testMissingRelevantEntries">
     <configuration name="AppTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
@@ -79,7 +81,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppTest.runFootball" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AppTest.runDefault" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="challenge" />
       <extension name="coverage">
         <pattern>
@@ -89,7 +91,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.exxcellent.challenge" />
       <option name="MAIN_CLASS_NAME" value="de.exxcellent.challenge.AppTest" />
-      <option name="METHOD_NAME" value="runFootball" />
+      <option name="METHOD_NAME" value="runDefault" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -145,11 +147,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AppTest.testTextInsteadOfNumbers" />
         <item itemvalue="JUnit.AppTest.testMissingRelevantEntries" />
-        <item itemvalue="JUnit.AppTest.testSomeEntriesMissing" />
         <item itemvalue="JUnit.AppTest" />
-        <item itemvalue="JUnit.AppTest.runFootball" />
+        <item itemvalue="JUnit.AppTest.testSomeEntriesMissing" />
+        <item itemvalue="JUnit.AppTest.runDefault" />
+        <item itemvalue="JUnit.AppTest.testTextInsteadOfNumbers" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742215957445</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Removed readEntryLines from TableFromFileReader.java, because it does not fit to JSON-structure.">
+      <option name="closed" value="true" />
+      <created>1742237413651</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1742237413651</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -256,6 +266,8 @@
     <MESSAGE value="Added test for the case that there is more than one entry, which has the smallest spread, and tests for the case that a .csv-file is missing column names or missing the header line." />
     <MESSAGE value="Created tests for the cases of datasets without entries, datasets with incomplete lines, and datasets with entries in wrong data format." />
     <MESSAGE value="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file." />
+    <MESSAGE value="Removed readEntryLines from TableFromFileReader.java, because it does not fit to JSON-structure." />
+    <MESSAGE value="Added warning message, if rows of the data set have too many or too less entries. Changed test cases accordingly." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added warning message, if rows of the data set have too many or too less entries. Changed test cases accordingly." />
   </component>
 </project>

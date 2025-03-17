@@ -112,7 +112,7 @@ public class TableAnalyser {
         // If rows were incomplete or contained entries with wrong format, the user is informed via messages in the
         // terminal.
         if (dataSetIsIncomplete) {
-            System.out.println("Some lines of the data set are incomplete. Relevant data is missing. " +
+            System.out.println("Relevant data is missing. " +
                     "Calculated the result based on remaining data.");
         }
         if (dataContainsWrongFormat) {

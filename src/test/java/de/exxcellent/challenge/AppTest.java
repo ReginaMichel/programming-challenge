@@ -21,8 +21,8 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  */
 class AppTest {
 
-    // While testing the terminal output is caught by an output stream captor, to be able to check whether the texts are
-    // as expected.
+    // While testing, the terminal output is caught by an output stream captor, to be able to check whether the texts
+    // are as expected.
     private final PrintStream standardOutput = System.out;
     private final ByteArrayOutputStream outputCaptor = new ByteArrayOutputStream();
 
@@ -206,7 +206,8 @@ class AppTest {
     @Test
     void testSomeEntriesMissing() throws FileNotFoundException {
         App.main("--weather", "weather_someentriesmissing.csv", "src/test/resources/de/exxcellent/challenge/");
-        assertEquals("Day with smallest temperature spread : 14", outputCaptor.toString().trim());
+        assertEquals("Some lines of the data set are incomplete. Please verify relevant data entries are in the right place.\r\n"
+                + "Day with smallest temperature spread : 14", outputCaptor.toString().trim());
     }
 
     /**
@@ -219,8 +220,9 @@ class AppTest {
     void testMissingRelevantEntries() throws FileNotFoundException {
         App.main("--weather", "weather_missingtemperatures.csv", "src/test/resources/de/exxcellent/challenge/");
         assertEquals(
-                "Some lines of the data set are incomplete. Relevant data is missing. Calculated the result based on remaining data.\r\n" +
-                        "Day with smallest temperature spread : 14", outputCaptor.toString().trim());
+                "Some lines of the data set are incomplete. Please verify relevant data entries are in the right place.\r\n"
+                        + "Relevant data is missing. Calculated the result based on remaining data.\r\n"
+                        + "Day with smallest temperature spread : 14", outputCaptor.toString().trim());
     }
 
     /**
