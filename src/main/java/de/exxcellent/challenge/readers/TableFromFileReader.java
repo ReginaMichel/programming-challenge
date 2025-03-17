@@ -19,15 +19,6 @@ public interface TableFromFileReader {
     public ArrayList<String> readColumnNames(String filepath) throws FileNotFoundException;
 
     /**
-     * Method to extract the rows of a data table stored in a file, except for the header line.
-     *
-     * @param filepath is the filepath of the file, which should be read.
-     * @return {@link ArrayList<String>} of lines, which are stored in the file, except for the header.
-     * @throws FileNotFoundException in case the file is not found.
-     */
-    public ArrayList<String> readEntryLines(String filepath) throws FileNotFoundException;
-
-    /**
      * Method to extract the entries of a data table, which is stored in a file, except for the header line.
      *
      * @param filepath filepath of the file, to be read.

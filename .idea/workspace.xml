@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Created tests for the cases of datasets without entries, datasets with incomplete lines, and datasets with entries in wrong data format.">
+    <list default="true" id="567357d1-d66a-4ffd-8b95-760b54e3f890" name="Changes" comment="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/exxcellent/challenge/AppTest.java" afterDir="false" />
     </list>
@@ -234,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742212865379</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file.">
+      <option name="closed" value="true" />
+      <created>1742215957444</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1742215957445</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -247,6 +255,7 @@
     <MESSAGE value="Added methods to determine rows with minimal spread of the values of two columns to TableAnalyser.java. The first method takes the column names, the other one takes the column numbers as parameters. Added the method call to the main method in App.java." />
     <MESSAGE value="Added test for the case that there is more than one entry, which has the smallest spread, and tests for the case that a .csv-file is missing column names or missing the header line." />
     <MESSAGE value="Created tests for the cases of datasets without entries, datasets with incomplete lines, and datasets with entries in wrong data format." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created tests for the cases of datasets without entries, datasets with incomplete lines, and datasets with entries in wrong data format." />
+    <MESSAGE value="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added an output stream captor to the unit tests to check, whether console outputs of the main method are like they should be.&#10;Added a test for the case that a file with .csv-extension is actually not a .csv-file." />
   </component>
 </project>
